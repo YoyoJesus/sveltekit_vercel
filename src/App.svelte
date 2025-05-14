@@ -44,10 +44,6 @@
   </div>
 
   <div id="additional_info" class="text-center text-sm md:text-base mt-4">
-    Test Site For Learning SvelteKit.
+    2025 Austin Sternberg
   </div>
-
-  <footer class="text-center mt-8 text-white-600">
-    Austin Sternberg
-  </footer>
 </main>
