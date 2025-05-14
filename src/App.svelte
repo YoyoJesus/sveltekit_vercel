@@ -7,6 +7,7 @@
   import CombatLogo from '/Combat.png'
   import designPattern2 from '/circuit.png'
   import designPattern from '/circuit2.png'
+  import puppet from '/puppet.png'
 </script>
 
 <main class="container mx-auto p-4">
@@ -15,6 +16,10 @@
   <img src={designPattern} class="absolute bottom-0 right-0 w-42 opacity-80" alt="Bottom Right Design Pattern" />
 
   <div class="flex flex-wrap justify-center items-center gap-6 my-8">
+    <a href="https://flaskvercel-nine.vercel.app/" target="_blank" rel="noreferrer" class="group relative">
+      <span class="absolute inset-0 bg-gradient-to-br from-white-500 to-black-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity"></span>
+      <img src={puppet} class="logo w-40 transition-transform hover:scale-110 relative" alt="Flask Vercel Logo" />
+    </a>
     <a href="https://web.cs.kent.edu/~asternb1/" target="_blank" rel="noreferrer" class="group relative">
       <span class="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity"></span>
       <img src={myAvatar} class="logo w-40 transition-transform hover:scale-110 relative" alt="HacKSU Logo" />
