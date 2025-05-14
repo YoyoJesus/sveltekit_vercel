@@ -9,23 +9,23 @@
   import designPattern from '/circuit2.png'
 </script>
 
-<main class="container mx-auto p-4 relative before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500 before:via-purple-500 before:to-pink-500 before:opacity-20 before:blur-3xl before:-z-10">
+<main class="container mx-auto p-4">
   <!-- Design pattern at top-left and bottom-right -->
-  <img src={designPattern2} class="absolute top-0 left-0 w-32 opacity-80" alt="Top Left Design Pattern" />
-  <img src={designPattern} class="absolute bottom-0 right-0 w-32 opacity-80" alt="Bottom Right Design Pattern" />
+  <img src={designPattern2} class="absolute top-0 left-0 w-42 opacity-80" alt="Top Left Design Pattern" />
+  <img src={designPattern} class="absolute bottom-0 right-0 w-42 opacity-80" alt="Bottom Right Design Pattern" />
 
   <div class="flex flex-wrap justify-center items-center gap-6 my-8">
     <a href="https://web.cs.kent.edu/~asternb1/" target="_blank" rel="noreferrer">
-      <img src={myAvatar} class="logo w-24 transition-transform hover:scale-110" alt="HacKSU Logo" />
+      <img src={myAvatar} class="logo w-40 transition-transform hover:scale-110" alt="HacKSU Logo" />
     </a>
     <a href="https://khe.io" target="_blank" rel="noreferrer">
-      <img src={kheLogo} class="logo khe w-24 transition-transform hover:scale-110" alt="KHE Logo" />
+      <img src={kheLogo} class="logo khe w-40 transition-transform hover:scale-110" alt="KHE Logo" />
     </a>
     <a href="https://hacksu.com" target="_blank" rel="noreferrer">
-      <img src={hacKSULogo} class="logo hacksu w-24 transition-transform hover:scale-110" alt="HackSU Logo" />
+      <img src={hacKSULogo} class="logo hacksu w-40 transition-transform hover:scale-110" alt="HackSU Logo" />
     </a>
     <a href="https://ksucombat.club" target="_blank" rel="noreferrer">
-      <img src={CombatLogo} class="logo combat w-24 transition-transform hover:scale-110" alt="Combat Logo" />
+      <img src={CombatLogo} class="logo combat w-40 transition-transform hover:scale-110" alt="Combat Logo" />
     </a>
   </div>
 
