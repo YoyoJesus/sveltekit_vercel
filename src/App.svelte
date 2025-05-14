@@ -15,17 +15,21 @@
   <img src={designPattern} class="absolute bottom-0 right-0 w-42 opacity-80" alt="Bottom Right Design Pattern" />
 
   <div class="flex flex-wrap justify-center items-center gap-6 my-8">
-    <a href="https://web.cs.kent.edu/~asternb1/" target="_blank" rel="noreferrer">
-      <img src={myAvatar} class="logo w-40 transition-transform hover:scale-110" alt="HacKSU Logo" />
+    <a href="https://web.cs.kent.edu/~asternb1/" target="_blank" rel="noreferrer" class="group relative">
+      <span class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity"></span>
+      <img src={myAvatar} class="logo w-40 transition-transform hover:scale-110 relative" alt="HacKSU Logo" />
     </a>
-    <a href="https://khe.io" target="_blank" rel="noreferrer">
-      <img src={kheLogo} class="logo khe w-40 transition-transform hover:scale-110" alt="KHE Logo" />
+    <a href="https://khe.io" target="_blank" rel="noreferrer" class="group relative">
+      <span class="absolute inset-0 bg-gradient-to-br from-yellow-500 to-orange-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity"></span>
+      <img src={kheLogo} class="logo khe w-40 transition-transform hover:scale-110 relative" alt="KHE Logo" />
     </a>
-    <a href="https://hacksu.com" target="_blank" rel="noreferrer">
-      <img src={hacKSULogo} class="logo hacksu w-40 transition-transform hover:scale-110" alt="HackSU Logo" />
+    <a href="https://hacksu.com" target="_blank" rel="noreferrer" class="group relative">
+      <span class="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity"></span>
+      <img src={hacKSULogo} class="logo hacksu w-40 transition-transform hover:scale-110 relative" alt="HackSU Logo" />
     </a>
-    <a href="https://ksucombat.club" target="_blank" rel="noreferrer">
-      <img src={CombatLogo} class="logo combat w-40 transition-transform hover:scale-110" alt="Combat Logo" />
+    <a href="https://ksucombat.club" target="_blank" rel="noreferrer" class="group relative">
+      <span class="absolute inset-0 bg-gradient-to-br from-red-500 to-pink-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity"></span>
+      <img src={CombatLogo} class="logo combat w-40 transition-transform hover:scale-110 relative" alt="Combat Logo" />
     </a>
   </div>
 
