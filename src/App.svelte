@@ -9,7 +9,7 @@
   import designPattern from '/circuit2.png'
 </script>
 
-<main class="container mx-auto p-4">
+<main class="container mx-auto p-4 relative before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-500 before:via-purple-500 before:to-pink-500 before:opacity-20 before:blur-3xl before:-z-10">
   <!-- Design pattern at top-left and bottom-right -->
   <img src={designPattern2} class="absolute top-0 left-0 w-32 opacity-80" alt="Top Left Design Pattern" />
   <img src={designPattern} class="absolute bottom-0 right-0 w-32 opacity-80" alt="Bottom Right Design Pattern" />
@@ -47,7 +47,7 @@
     Test Site For Learning SvelteKit.
   </div>
 
-  <footer class="text-center mt-8 text-gray-600">
+  <footer class="text-center mt-8 text-white-600">
     Austin Sternberg
   </footer>
 </main>
