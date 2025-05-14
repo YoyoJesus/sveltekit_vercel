@@ -17,7 +17,7 @@
 
   <div class="flex flex-wrap justify-center items-center gap-6 my-8">
     <a href="https://flaskvercel-nine.vercel.app/" target="_blank" rel="noreferrer" class="group relative">
-      <span class="absolute inset-0 bg-gradient-to-br from-white-500 to-black-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity"></span>
+      <span class="absolute inset-0 bg-gradient-to-br from-white-500 to-orange-500 opacity-0 group-hover:opacity-50 blur-md transition-opacity"></span>
       <img src={puppet} class="logo w-40 transition-transform hover:scale-110 relative" alt="Flask Vercel Logo" />
     </a>
     <a href="https://web.cs.kent.edu/~asternb1/" target="_blank" rel="noreferrer" class="group relative">
