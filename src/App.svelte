@@ -9,99 +9,45 @@
   import designPattern from '/circuit2.png'
 </script>
 
-<style>
-  /* In-Line CSS Style */
-  main {
-    padding: 2rem;
-  }
-
-  div {
-    padding: 10px;
-  }
-
-  #sign_up_btn {
-    font-size: 24px;
-  }
-  #additional_info {
-    font-size: 18px;
-  }
-  
-  .logo {
-    height: 6em;
-    padding-left: 3em;
-    padding-right: 3em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #f87400ad);
-  }
-  .logo.khe:hover {
-    filter: drop-shadow(0 0 2em #ebe7c1c8);
-  }
-  .logo.hacksu:hover {
-    filter: drop-shadow(0 0 2em #00ff00a1);
-  }
-  .logo.combat:hover {
-    filter: drop-shadow(0 0 2em #ffe600a1);
-  }
-  .button:hover {
-    filter: drop-shadow(0 0 2em #00ddff9f);
-  }
-
-  /* Absolute positioning for designPattern */
-  .top-left, .bottom-right {
-    opacity: 0.8;
-    position: absolute;
-    width: 300px;
-    height: auto;
-  }
-
-  .top-left {
-    top: 0;
-    left: 0;
-  }
-
-  .bottom-right {
-    bottom: 0;
-    right: 0;
-  }
-</style>
-
-<main class="container">
+<main class="container mx-auto p-4">
   <!-- Design pattern at top-left and bottom-right -->
-  <img src={designPattern2} class="top-left" alt="Top Left Design Pattern" />
-  <img src={designPattern} class="bottom-right" alt="Bottom Right Design Pattern" />
+  <img src={designPattern2} class="absolute top-0 left-0 w-32 opacity-80" alt="Top Left Design Pattern" />
+  <img src={designPattern} class="absolute bottom-0 right-0 w-32 opacity-80" alt="Bottom Right Design Pattern" />
 
-  <div>
+  <div class="flex flex-wrap justify-center items-center gap-6 my-8">
     <a href="https://web.cs.kent.edu/~asternb1/" target="_blank" rel="noreferrer">
-      <img src={myAvatar} class="logo" alt="HacKSU Logo" />
+      <img src={myAvatar} class="logo w-24 transition-transform hover:scale-110" alt="HacKSU Logo" />
     </a>
     <a href="https://khe.io" target="_blank" rel="noreferrer">
-      <img src={kheLogo} class="logo khe" alt="KHE Logo" />
+      <img src={kheLogo} class="logo khe w-24 transition-transform hover:scale-110" alt="KHE Logo" />
     </a>
     <a href="https://hacksu.com" target="_blank" rel="noreferrer">
-      <img src={hacKSULogo} class="logo hacksu" alt="HackSU Logo" />
+      <img src={hacKSULogo} class="logo hacksu w-24 transition-transform hover:scale-110" alt="HackSU Logo" />
     </a>
     <a href="https://ksucombat.club" target="_blank" rel="noreferrer">
-      <img src={CombatLogo} class="logo combat" alt="Combat Logo" />
+      <img src={CombatLogo} class="logo combat w-24 transition-transform hover:scale-110" alt="Combat Logo" />
     </a>
   </div>
 
-  <h1 class="text-center my-5">Explore My Work</h1>
+  <h1 class="text-center text-2xl md:text-4xl font-bold my-5">Explore My Work</h1>
 
   <div class="text-center">
-    <button id="sign_up_btn" onclick={() => {
-      // redirect the user to the desired Google Form URL
-      location.href = "https://github.com/yoyojesus";
-    }} class="btn btn-primary button"> View My Github Projects </button>
+    <button
+      id="sign_up_btn"
+      onclick={() => {
+        location.href = "https://github.com/yoyojesus";
+      }}
+      class="btn bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 transition-all"
+    >
+      View My Github Projects
+    </button>
   </div>
 
-  <div id="additional_info" class="text-center">
+  <div id="additional_info" class="text-center text-sm md:text-base mt-4">
     Test Site For Learning SvelteKit.
   </div>
 
-  <footer>
+  <footer class="text-center mt-8 text-gray-600">
     Austin Sternberg
   </footer>
 </main>
