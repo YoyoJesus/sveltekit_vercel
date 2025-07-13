@@ -10,18 +10,33 @@
   import organicBlob2 from '/organic-blob2.svg'
 </script>
 
-<main class="container mx-auto p-4 relative">
+<main class="container mx-auto p-4 relative z-10">
   <!-- Organic floating shapes for background -->
+  <div class="organic-shape"></div>
+  <div class="organic-shape"></div>
+  <div class="organic-shape"></div>
+  <div class="organic-shape"></div>
+  <div class="organic-shape"></div>
   <div class="organic-shape"></div>
   <div class="organic-shape"></div>
   <div class="organic-shape"></div>
   
   <!-- Additional floating blobs -->
-  <img src={organicBlob1} class="floating-blob" style="width: 120px; height: 120px; top: 20%; right: 5%; animation-delay: -1s;" alt="" />
-  <img src={organicBlob2} class="floating-blob" style="width: 80px; height: 80px; bottom: 20%; left: 10%; animation-delay: -3s;" alt="" />
-  <img src={organicBlob1} class="floating-blob" style="width: 60px; height: 60px; top: 50%; left: 70%; animation-delay: -5s;" alt="" />
+  <img src={organicBlob1} class="floating-blob" style="width: 180px; height: 180px; top: 15%; right: -20px; animation-delay: -1s;" alt="" />
+  <img src={organicBlob2} class="floating-blob" style="width: 140px; height: 140px; bottom: 15%; left: -30px; animation-delay: -3s;" alt="" />
+  <img src={organicBlob1} class="floating-blob" style="width: 100px; height: 100px; top: 45%; right: -10px; animation-delay: -5s;" alt="" />
+  <img src={organicBlob2} class="floating-blob" style="width: 80px; height: 80px; top: 20%; left: -15px; animation-delay: -2s;" alt="" />
+  <img src={organicBlob1} class="floating-blob" style="width: 120px; height: 120px; top: 55%; right: 85%; animation-delay: -4s;" alt="" />
+  <img src={organicBlob2} class="floating-blob" style="width: 90px; height: 90px; top: 30%; left: 90%; animation-delay: -6s;" alt="" />
+  <img src={organicBlob1} class="floating-blob" style="width: 160px; height: 160px; bottom: 25%; right: -25px; animation-delay: -3.5s;" alt="" />
   
-  <!-- Sparkle effects -->
+  <!-- Enhanced sparkle effects -->
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
   <div class="sparkle"></div>
   <div class="sparkle"></div>
   <div class="sparkle"></div>
