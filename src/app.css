@@ -1,14 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* Frutiger Aero Color Palette */
+  --primary-sky: linear-gradient(135deg, #87ceeb 0%, #4fc3f7 50%, #29b6f6 100%);
+  --secondary-aurora: linear-gradient(135deg, #81c784 0%, #4dd0e1 50%, #29b6f6 100%);
+  --accent-lime: #c3e88d;
+  --accent-cyan: #89ddff;
+  --accent-orange: #ffb74d;
+  --glass-white: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --text-primary: rgba(255, 255, 255, 0.95);
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #0e5757;
-
+  color-scheme: light;
+  color: var(--text-primary);
+  background: var(--primary-sky);
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,11 +29,15 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(137, 221, 255, 0.5);
+  transition: all 0.3s ease;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--accent-lime);
+  text-shadow: 0 0 15px rgba(195, 232, 141, 0.8);
+  transform: translateY(-2px);
 }
 
 body {
@@ -30,11 +46,64 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--primary-sky);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: var(--glass-white);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-button {
+  background: var(--glass-white);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 25px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Floating animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(137, 221, 255, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(137, 221, 255, 0.8); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-weight: 600;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 50%, var(--accent-lime) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .card {
@@ -49,33 +118,152 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  border-radius: 25px;
+  border: 1px solid var(--glass-border);
+  padding: 0.8em 2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #0c3f45;
+  background: var(--glass-white);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--text-primary);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
+
 button:hover {
-  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  border-color: var(--accent-cyan);
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
 }
+
+/* Organic shapes for background */
+.organic-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--glass-white);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: float 8s ease-in-out infinite;
+}
+
+.organic-shape:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 5%;
+  animation-delay: -2s;
+}
+
+.organic-shape:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 10%;
+  animation-delay: -4s;
+}
+
+.organic-shape:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  top: 80%;
+  left: 20%;
+  animation-delay: -6s;
+}
+
+/* Additional floating elements */
+.floating-blob {
+  position: absolute;
+  opacity: 0.6;
+  animation: float 10s ease-in-out infinite;
+  z-index: -1;
+}
+
+.floating-blob:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  right: 5%;
+  animation-delay: -1s;
+}
+
+.floating-blob:nth-child(5) {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 10%;
+  animation-delay: -3s;
+}
+
+.floating-blob:nth-child(6) {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 70%;
+  animation-delay: -5s;
+}
+
+/* Enhance card interactions */
+.logo-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.logo-container:hover::before {
+  left: 100%;
+}
+
+/* Sparkle effect */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-lime);
+  border-radius: 50%;
+  animation: sparkle 2s linear infinite;
+}
+
+.sparkle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.sparkle:nth-child(2) { top: 80%; left: 80%; animation-delay: 0.5s; }
+.sparkle:nth-child(3) { top: 50%; left: 90%; animation-delay: 1s; }
+.sparkle:nth-child(4) { top: 20%; left: 10%; animation-delay: 1.5s; }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--text-primary);
+    background: var(--primary-sky);
   }
   a:hover {
-    color: #000dff;
+    color: var(--accent-lime);
   }
   button {
-    background-color: #f9f9f9;
+    background: var(--glass-white);
+    color: var(--text-primary);
   }
 }
