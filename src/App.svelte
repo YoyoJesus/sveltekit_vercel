@@ -8,6 +8,7 @@
   import puppet from '/puppet.png'
   import organicBlob1 from '/organic-blob1.svg'
   import organicBlob2 from '/organic-blob2.svg'
+  import hackerMan from '/hacker.jpg'
 </script>
 
 <main class="container mx-auto p-4 relative z-10">
@@ -48,14 +49,14 @@
       <a href="https://flaskvercel-nine.vercel.app/" target="_blank" rel="noreferrer" class="group relative floating">
         <div class="glass-button p-3 transition-all duration-300 hover:scale-110 logo-container">
           <span class="absolute inset-0 bg-gradient-to-br from-orange-400 to-pink-400 opacity-0 group-hover:opacity-30 blur-xl transition-opacity rounded-full"></span>
-          <img src={puppet} class="logo w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="Flask Vercel Logo" />
+          <img src={myAvatar} class="logo w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="Flask Vercel Logo" />
         </div>
       </a>
       
-      <a href="https://web.cs.kent.edu/~asternb1/" target="_blank" rel="noreferrer" class="group relative floating" style="animation-delay: -1s;">
+      <a href="https://ctf.hacksu.com" target="_blank" rel="noreferrer" class="group relative floating" style="animation-delay: -1s;">
         <div class="glass-button p-3 transition-all duration-300 hover:scale-110 logo-container">
           <span class="absolute inset-0 bg-gradient-to-br from-purple-400 to-blue-400 opacity-0 group-hover:opacity-30 blur-xl transition-opacity rounded-full"></span>
-          <img src={myAvatar} class="logo w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="My Avatar" />
+          <img src={hackerMan} class="logo w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="My Avatar" />
         </div>
       </a>
       
