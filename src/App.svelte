@@ -118,10 +118,9 @@
       <a href="https://blog.yoyojesus.xyz" target="_blank" rel="noreferrer" class="group relative floating" style="animation-delay: -5s;">
         <div class="glass-button p-3 transition-all duration-300 hover:scale-110 logo-container">
           <span class="absolute inset-0 bg-gradient-to-br from-pink-400 to-indigo-400 opacity-0 group-hover:opacity-30 blur-xl transition-opacity rounded-full"></span>
-          <img src={blog} class="logo puppet w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="Puppet Logo" />
+          <img src={blog} class="logo blog w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="Blog Logo" />
         </div>
-      </a>
-    </div>
+      </a>    </div>
   </div>
 
   <h1 class="text-center text-3xl md:text-5xl font-bold my-8 px-4">Explore My Work</h1>
