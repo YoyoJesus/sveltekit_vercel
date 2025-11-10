@@ -10,6 +10,14 @@
   import organicBlob2 from '/organic-blob2.svg'
   import hackerMan from '/mask.webp'
   import blog from '/blog.png'
+  // unplugin-icons imports (compiled to Svelte components by Vite)
+  import YoutubeIcon from '~icons/fa-brands/youtube'
+  import RedditIcon from '~icons/fa-brands/reddit'
+  import LinkedinIcon from '~icons/fa-brands/linkedin'
+  import GithubIcon from '~icons/fa-brands/github'
+  import InstagramIcon from '~icons/fa-brands/instagram'
+  import BlueskyIcon from '~icons/simple-icons/bluesky'
+  import EmailIcon from '~icons/mdi/email'
 </script>
 
 <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
@@ -120,19 +128,49 @@
           <span class="absolute inset-0 bg-gradient-to-br from-pink-400 to-indigo-400 opacity-0 group-hover:opacity-30 blur-xl transition-opacity rounded-full"></span>
           <img src={blog} class="logo blog w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="Blog Logo" />
         </div>
-      </a>    </div>
+      </a>
+    </div>
   </div>
 
-  <h1 class="text-center text-3xl md:text-5xl font-bold my-8 px-4">Explore My Work</h1>
-
   <div class="text-center mb-12">
-    <button
+    <a
       id="sign_up_btn"
-      on:click={() => location.href = "https://github.com/yoyojesus"}
-      class="glass-button px-8 py-4 text-lg font-semibold pulse-glow"
+      href="https://github.com/yoyojesus"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="View more on GitHub"
+      class="glass-button inline-flex items-center justify-center gap-3 px-6 py-3 text-lg font-semibold pulse-glow transition-all duration-200 hover:scale-105 text-black"
     >
-      View More of My Work on Github
-    </button>
+  <GithubIcon class="w-5 h-5 text-white" aria-hidden="true" />
+  <span class="text-black blue-text-glow">View More of My Work on Github</span>
+    </a>
+
+    <!-- Social links row: replace hrefs with your actual profiles -->
+    <div class="flex justify-center items-center gap-4 mt-4 mb-4">
+      <a href="https://www.youtube.com/@yoyojesus" target="_blank" rel="noreferrer" aria-label="YouTube" class="glass-button p-3 transition-all duration-300 hover:scale-110">
+        <YoutubeIcon class="w-6 h-6 text-white" aria-hidden="true" />
+      </a>
+
+      <a href="https://www.reddit.com/user/yoyojesus45/" target="_blank" rel="noreferrer" aria-label="Reddit" class="glass-button p-3 transition-all duration-300 hover:scale-110">
+        <RedditIcon class="w-6 h-6 text-white" aria-hidden="true" />
+      </a>
+
+      <a href="https://www.linkedin.com/in/austin-sternberg-765620218/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="glass-button p-3 transition-all duration-300 hover:scale-110">
+        <LinkedinIcon class="w-6 h-6 text-white" aria-hidden="true" />
+      </a>
+
+      <a href="https://www.instagram.com/yoyoje_sus/" target="_blank" rel="noreferrer" aria-label="Instagram" class="glass-button p-3 transition-all duration-300 hover:scale-110">
+        <InstagramIcon class="w-6 h-6 text-white" aria-hidden="true" />
+      </a>
+
+      <a href="https://bsky.app/profile/yoyojesus.bsky.social" target="_blank" rel="noreferrer" aria-label="Bluesky" class="glass-button p-3 transition-all duration-300 hover:scale-110">
+        <BlueskyIcon class="w-6 h-6 text-white" aria-hidden="true" />
+      </a>
+
+      <a href="mailto:austinsternberg45@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" class="glass-button p-3 transition-all duration-300 hover:scale-110">
+        <EmailIcon class="w-6 h-6 text-white" aria-hidden="true" />
+      </a>
+    </div>
   </div>
 
   <div class="glass mx-auto mt-8 p-6 max-w-md text-center">
