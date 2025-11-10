@@ -145,8 +145,7 @@
   <span class="text-black blue-text-glow">View More of My Work on Github</span>
     </a>
 
-    <!-- Social links row: replace hrefs with your actual profiles -->
-    <div class="flex justify-center items-center gap-4 mt-4 mb-4">
+    <div class="flex justify-center items-center gap-4 mt-4 mb-4">    <div class="flex justify-center items-center gap-4 mt-4 mb-4">
       <a href="https://www.youtube.com/@yoyojesus" target="_blank" rel="noreferrer" aria-label="YouTube" class="glass-button p-3 transition-all duration-300 hover:scale-110">
         <YoutubeIcon class="w-6 h-6 text-white" aria-hidden="true" />
       </a>
@@ -167,10 +166,9 @@
         <BlueskyIcon class="w-6 h-6 text-white" aria-hidden="true" />
       </a>
 
-      <a href="mailto:austinsternberg45@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" class="glass-button p-3 transition-all duration-300 hover:scale-110">
+      <a href="mailto:austinsternberg45@gmail.com" aria-label="Email" class="glass-button p-3 transition-all duration-300 hover:scale-110">
         <EmailIcon class="w-6 h-6 text-white" aria-hidden="true" />
-      </a>
-    </div>
+      </a>    </div>
   </div>
 
   <div class="glass mx-auto mt-8 p-6 max-w-md text-center">
