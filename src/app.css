@@ -1,30 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 :root {
-  /* Windows 7 Frutiger Aero Background */
-  --windows7-bg: radial-gradient(ellipse at center, 
-    #74b9ff 0%, 
-    #4a90e2 20%, 
-    #2e86de 40%, 
-    #1e3c72 60%, 
-    #0f2027 80%, 
-    #0a1a24 100%);
-  
-  /* Windows 7 Blue Theme Color Palette */
-  --primary-blue: linear-gradient(135deg, #4a90e2 0%, #6bb6ff 50%, #2e86de 100%);
-  --secondary-azure: linear-gradient(135deg, #1e90ff 0%, #4fc3f7 50%, #0277bd 100%);
-  --accent-cyan: #00bcd4;
-  --accent-navy: #1565c0;
-  --accent-light-blue: #03a9f4;
+  /* Windows 7 Frutiger Aero Background (swapped to green tones) */
+  --windows7-bg: radial-gradient(ellipse at center,
+    #86ef7a 0%,
+    #6bbf4a 20%,
+    #2e8b3c 40%,
+    #1a990e 60%,
+    #0f4f21 80%,
+    #07140a 100%);
+
+  --primary-blue: linear-gradient(135deg, #1a990e 0%, #6bbf4a 50%, #74e58a 100%);
+  --secondary-azure: linear-gradient(135deg, #2e8b3c 0%, #7ce48f 50%, #145723 100%);
+  --accent-cyan: #8fe6a2;
+  --accent-navy: #155a2a;
+  --accent-light-blue: #1a990e;
   --accent-silver: #b0bec5;
-  --accent-green: #1a990e;
+  --accent-green: #0f03f4;
   --glass-white: rgba(255, 255, 255, 0.15);
-  --glass-blue: rgba(116, 185, 255, 0.2);
-  --glass-green: rgba(144, 238, 144, 0.2);
-  --glass-border: rgba(255, 255, 255, 0.25);
-  --text-primary: rgba(255, 255, 255, 0.95);
+  --glass-blue: rgba(144, 238, 144, 0.2);
+  --glass-green: rgba(116, 185, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.367);
+  --text-primary: rgb(0, 0, 0);
   --text-secondary: rgba(255, 255, 255, 0.8);
-  
+  --bubble-primary: rgba(0, 255, 208, 0.354);
+
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.6;
   font-weight: 400;
@@ -43,7 +43,7 @@ a {
   font-weight: 500;
   color: var(--accent-light-blue);
   text-decoration: none;
-  text-shadow: 0 0 10px rgba(3, 169, 244, 0.5);
+  text-shadow: 0 0 10px var(--accent-light-blue);
   transition: all 0.3s ease;
 }
 a:hover {
@@ -87,7 +87,7 @@ body {
 }
 
 .glass-button:hover {
-  background: rgba(0, 245, 20, 0.3);
+  background: var(--glass-blue);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   transform: translateY(-3px);
 }
@@ -120,8 +120,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(116, 185, 255, 0.6); }
-  50% { box-shadow: 0 0 40px rgba(116, 185, 255, 0.9); }
+  0%, 100% { box-shadow: 0 0 20px var(--glass-blue); }
+  50% { box-shadow: 0 0 40px var(--glass-blue); }
 }
 
 .floating {
@@ -190,7 +190,7 @@ button:focus-visible {
 .organic-shape {
   position: absolute;
   border-radius: 50%;
-  background: var(--glass-green);
+  background: var(--bubble-primary);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   animation: float 5s ease-in-out infinite;
@@ -380,21 +380,26 @@ button:focus-visible {
   height: 10px;
   background: var(--accent-silver);
   border-radius: 50%;
-  animation: sparkle 2s linear infinite;
+  /* per-sparkle vars --d (duration) and --delay (start offset) allow independent flicker timings */
+  animation-name: sparkle;
+  animation-duration: var(--d, 2s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: var(--delay, 0s);
 }
 
-.sparkle:nth-child(1) { top: 10%; left: 20%; animation: sparkle 1.5s linear infinite; animation-delay: 0s; }
-.sparkle:nth-child(2) { top: 80%; left: 80%; animation: sparkle-bounce 2s linear infinite; animation-delay: 0.5s; }
-.sparkle:nth-child(3) { top: 50%; left: 90%; animation: sparkle 1.8s linear infinite; animation-delay: 1s; }
-.sparkle:nth-child(4) { top: 20%; left: 10%; animation: sparkle-bounce 2.2s linear infinite; animation-delay: 1.5s; }
+.sparkle:nth-child(1) { top: 10%; left: 20%; --d:1.5s; --delay:0s; }
+.sparkle:nth-child(2) { top: 80%; left: 80%; --d:2s; --delay:0.5s; }
+.sparkle:nth-child(3) { top: 50%; left: 90%; --d:1.8s; --delay:1s; }
+.sparkle:nth-child(4) { top: 20%; left: 10%; --d:2.2s; --delay:1.5s; }
 
 /* Additional sparkles */
-.sparkle:nth-child(5) { top: 60%; left: 30%; animation: sparkle 1.7s linear infinite; animation-delay: 0.3s; }
-.sparkle:nth-child(6) { top: 30%; left: 60%; animation: sparkle-bounce 2.1s linear infinite; animation-delay: 0.8s; }
-.sparkle:nth-child(7) { top: 70%; left: 15%; animation: sparkle 1.9s linear infinite; animation-delay: 1.2s; }
-.sparkle:nth-child(8) { top: 40%; left: 85%; animation: sparkle-bounce 1.6s linear infinite; animation-delay: 1.7s; }
-.sparkle:nth-child(9) { top: 25%; left: 45%; animation: sparkle 2.3s linear infinite; animation-delay: 0.4s; }
-.sparkle:nth-child(10) { top: 75%; left: 65%; animation: sparkle-bounce 1.4s linear infinite; animation-delay: 1.9s; }
+.sparkle:nth-child(5) { top: 60%; left: 30%; --d:1.7s; --delay:0.3s; }
+.sparkle:nth-child(6) { top: 30%; left: 60%; --d:2.1s; --delay:0.8s; }
+.sparkle:nth-child(7) { top: 70%; left: 15%; --d:1.9s; --delay:1.2s; }
+.sparkle:nth-child(8) { top: 40%; left: 85%; --d:1.6s; --delay:1.7s; }
+.sparkle:nth-child(9) { top: 25%; left: 45%; --d:2.3s; --delay:0.4s; }
+.sparkle:nth-child(10) { top: 75%; left: 65%; --d:1.4s; --delay:1.9s; }
 
 @media (prefers-color-scheme: light) {
   :root {
