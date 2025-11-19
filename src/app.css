@@ -419,3 +419,7 @@ button:focus-visible {
     color: var(--text-primary);
   }
 }
+
+.blue-text {
+  color: var(--accent-green);
+}

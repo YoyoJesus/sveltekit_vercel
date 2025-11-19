@@ -12,7 +12,6 @@
   import blog from '/blog.png'
   // unplugin-icons imports (compiled to Svelte components by Vite)
   import YoutubeIcon from '~icons/fa-brands/youtube'
-  import RedditIcon from '~icons/fa-brands/reddit'
   import LinkedinIcon from '~icons/fa-brands/linkedin'
   import GithubIcon from '~icons/fa-brands/github'
   import InstagramIcon from '~icons/fa-brands/instagram'

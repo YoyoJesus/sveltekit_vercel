@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Guestbook</title>
+    <style>
+      body { font-family: Inter, system-ui, Arial; background: #f6faf8; color:#0b1220; padding:2rem; }
+      .card{ max-width:720px; margin:0 auto; background:rgba(255,255,255,0.85); border-radius:12px; padding:1.25rem; box-shadow:0 6px 24px rgba(3,10,18,0.08)}
+      form { display:flex; flex-direction:column; gap:.5rem }
+      input, textarea { padding:.6rem; border-radius:8px; border:1px solid rgba(3,10,18,0.08); font-size:1rem }
+      button{ padding:.6rem 1rem; border-radius:8px; background:#0ea5e9; color:white; border:none; cursor:pointer }
+      .entry { padding:.75rem; border-bottom:1px solid rgba(3,10,18,0.04) }
+      .meta { font-size:.85rem; color:#334155 }
+      .small { font-size:.9rem }
+      .muted{ color:#64748b }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Guestbook</h1>
+      <form id="guestForm">
+        <input id="name" placeholder="Your name (optional)" maxlength="200" />
+        <textarea id="message" placeholder="Your message" rows="4" maxlength="2000" required></textarea>
+        <div style="display:flex; gap:.5rem; align-items:center">
+          <button type="submit">Sign Guestbook</button>
+          <div id="status" class="muted small"></div>
+        </div>
+      </form>
+
+      <h2 style="margin-top:1rem">Entries</h2>
+      <div id="entries"></div>
+    </div>
+
+    <script>
+      // Use local dev API server if running on localhost (dev-server.js)
+      const api = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+        ? 'http://localhost:3001/api/guestbook'
+        : '/api/guestbook'
+
+      async function load() {
+        const res = await fetch(api)
+        const data = await res.json().catch(()=>[])
+        const container = document.getElementById('entries')
+        container.innerHTML = ''
+        if (!data || data.length === 0) {
+          container.innerHTML = '<p class="muted">No entries yet.</p>'
+          return
+        }
+        for (const e of data) {
+          const div = document.createElement('div')
+          div.className = 'entry'
+          div.innerHTML = `<div class="meta"><strong>${escapeHtml(e.name||'Anonymous')}</strong> <span class="muted">• ${new Date(e.createdAt).toLocaleString()}</span></div><div class="small">${escapeHtml(e.message)}</div>`
+          container.appendChild(div)
+        }
+      }
+
+      function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') }
+
+      document.getElementById('guestForm').addEventListener('submit', async (ev)=>{
+        ev.preventDefault()
+        const name = document.getElementById('name').value
+        const message = document.getElementById('message').value
+        const status = document.getElementById('status')
+        status.textContent = 'Saving...'
+        try{
+          const res = await fetch(api, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ name, message }) })
+          const json = await res.json()
+          if (json && json.success) {
+            status.textContent = 'Saved!'
+            document.getElementById('message').value = ''
+            load()
+            setTimeout(()=> status.textContent = '', 2000)
+          } else {
+            status.textContent = json && json.error ? json.error : 'Error'
+          }
+        } catch (err) {
+          status.textContent = 'Network error'
+        }
+      })
+
+      load()
+    </script>
+  </body>
+</html>
