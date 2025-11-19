@@ -150,10 +150,6 @@
         <YoutubeIcon class="w-6 h-6 text-white" aria-hidden="true" />
       </a>
 
-      <a href="https://www.reddit.com/user/yoyojesus45/" target="_blank" rel="noreferrer" aria-label="Reddit" class="glass-button p-3 transition-all duration-300 hover:scale-110">
-        <RedditIcon class="w-6 h-6 text-white" aria-hidden="true" />
-      </a>
-
       <a href="https://www.linkedin.com/in/austin-sternberg-765620218/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="glass-button p-3 transition-all duration-300 hover:scale-110">
         <LinkedinIcon class="w-6 h-6 text-white" aria-hidden="true" />
       </a>
