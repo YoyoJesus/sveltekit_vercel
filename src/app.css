@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 :root {
-  /* Windows 7 Frutiger Aero Background (swapped to green tones) */
+  /* Blue-Teal-Purple gradient background */
   --windows7-bg: radial-gradient(ellipse at center,
-    #86ef7a 0%,
-    #6bbf4a 20%,
-    #2e8b3c 40%,
-    #1a990e 60%,
-    #0f4f21 80%,
-    #07140a 100%);
+    #4a9fd8 0%,
+    #3d8bc4 15%,
+    #3a7eb0 30%,
+    #38859e 45%,
+    #36748c 60%,
+    #4b5b8a 75%,
+    #5a4d7e 90%,
+    #2d1f3d 100%);
 
   --primary-blue: linear-gradient(135deg, #1a990e 0%, #6bbf4a 50%, #74e58a 100%);
   --secondary-azure: linear-gradient(135deg, #2e8b3c 0%, #7ce48f 50%, #145723 100%);
@@ -62,49 +64,108 @@ body {
   overflow-x: hidden;
 }
 
-/* Glassmorphism utility classes */
+/* Glassmorphism utility classes with iOS Liquid Glass effect */
 .glass {
-  background: var(--glass-green);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(50px) saturate(180%);
+  -webkit-backdrop-filter: blur(50px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 5;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 50%);
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .glass-button {
-  background: var(--glass-green);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 25px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 5;
+  overflow: hidden;
+}
+
+.glass-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  opacity: 0.4;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .glass-button:hover {
-  background: var(--glass-blue);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  transform: translateY(-3px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(45px) saturate(200%);
+  -webkit-backdrop-filter: blur(45px) saturate(200%);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(116, 185, 255, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Floating animations */
+.glass-button:hover::before {
+  opacity: 0.6;
+}
+
+/* Floating animations with liquid motion */
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg) translateX(0px); }
-  25% { transform: translateY(-100px) rotate(90deg) translateX(100px); }
-  50% { transform: translateY(-200px) rotate(180deg) translateX(0px); }
-  75% { transform: translateY(-100px) rotate(270deg) translateX(-100px); }
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) translateX(0px); 
+  }
+  25% { 
+    transform: translateY(-100px) rotate(90deg) translateX(100px); 
+  }
+  50% { 
+    transform: translateY(-200px) rotate(180deg) translateX(0px); 
+  }
+  75% { 
+    transform: translateY(-100px) rotate(270deg) translateX(-100px); 
+  }
 }
 
 @keyframes float-reverse {
-  0%, 100% { transform: translateY(0px) rotate(0deg) translateX(0px); }
-  25% { transform: translateY(100px) rotate(-90deg) translateX(-150); }
-  50% { transform: translateY(200px) rotate(-180deg) translateX(0px); }
-  75% { transform: translateY(300px) rotate(-270deg) translateX(150); }
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) translateX(0px); 
+  }
+  25% { 
+    transform: translateY(100px) rotate(-90deg) translateX(-150px); 
+  }
+  50% { 
+    transform: translateY(200px) rotate(-180deg) translateX(0px); 
+  }
+  75% { 
+    transform: translateY(300px) rotate(-270deg) translateX(150px); 
+  }
 }
 
 @keyframes drift {
@@ -115,8 +176,12 @@ body {
 }
 
 @keyframes gentle-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-60px) translateX(-30px); }
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-60px) translateX(-30px); 
+  }
 }
 
 @keyframes pulse-glow {
@@ -191,15 +256,32 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Organic shapes for background */
+/* Organic shapes for background with liquid glass effect */
 .organic-shape {
   position: absolute;
   border-radius: 50%;
-  background: var(--bubble-primary);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(0, 255, 208, 0.08), rgba(0, 255, 208, 0.04));
+  backdrop-filter: blur(50px) saturate(180%);
+  -webkit-backdrop-filter: blur(50px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(0, 255, 208, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
   animation: float 5s ease-in-out infinite;
   z-index: 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.organic-shape::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 50%);
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .organic-shape:nth-child(1) {
