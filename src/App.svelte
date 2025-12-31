@@ -17,6 +17,9 @@
   import InstagramIcon from '~icons/fa-brands/instagram'
   import BlueskyIcon from '~icons/simple-icons/bluesky'
   import EmailIcon from '~icons/mdi/email'
+  
+  // State for showing/hiding About Me section
+  let showAbout = false
 </script>
 
 <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
@@ -171,4 +174,34 @@
       <span class="font-light">{new Date().getFullYear()} Austin Sternberg</span>
     </div>
   </div>
+
+  <!-- Expandable (clickable) option for 'quick overview of me' section -->
+  <div class="text-center mt-12">
+    <button
+      id="toggle_about_btn"
+      class="glass-button px-6 py-3 text-lg font-semibold transition-all duration-200 hover:scale-105 text-black"
+      on:click={() => showAbout = !showAbout}
+    >
+      {#if showAbout}
+        Hide Overview
+      {:else}
+        Quick Overview
+      {/if}
+    </button>
+  </div>
+  {#if showAbout}
+    <div class="glass mx-auto mt-8 p-6 max-w-9xl text-left">
+      <p class="text-base md:text-lg leading-relaxed">
+        I'm Austin Sternberg, the Events Coordinator at HacKSU. I am a junior at Kent State University pursuing a degree in Computer Science with a minor in Computer Engineering. <br><br>
+        As Events Coordinator, I am responsible for HacKSU's major events, including our annual hackathon, Kent Hack Enough (KHE), and  our new annual CTF competition, Kent Hack IT (KHI) <br><br>
+        I have worked the past few years as a seasonal IT Support Specialist at Riverside Local Schools, where I gained hands-on experience in troubleshooting and repairing various hardware and software issues. As well as maintaining network systems and providing technical support to staff and students. <br><br>
+        In my free time, I have been developing a handful of python information security tools, which you can find on my GitHub.<br><br><br>
+
+        Find more about me on my specific project sites and portfolio links above!
+
+      </p>
+    </div>
+  {/if}
+
+
 </main>
