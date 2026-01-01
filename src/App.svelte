@@ -169,12 +169,6 @@
       </a>    </div>
   </div>
 
-  <div class="glass mx-auto mt-8 p-6 max-w-md text-center">
-    <div id="additional_info" class="text-sm md:text-base opacity-90">
-      <span class="font-light">{new Date().getFullYear()} Austin Sternberg</span>
-    </div>
-  </div>
-
   <!-- Expandable (clickable) option for 'quick overview of me' section -->
   <div class="text-center mt-12">
     <button
@@ -202,6 +196,13 @@
       </p>
     </div>
   {/if}
+
+
+  <div class="glass mx-auto mt-8 p-6 max-w-md text-center">
+    <div id="additional_info" class="text-sm md:text-base opacity-90">
+      <span class="font-light">{new Date().getFullYear()} Austin Sternberg</span>
+    </div>
+  </div>
 
 
 </main>
