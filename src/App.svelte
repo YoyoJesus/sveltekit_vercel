@@ -8,7 +8,7 @@
   import puppet from '/puppet.png'
   import organicBlob1 from '/organic-blob1.svg'
   import organicBlob2 from '/organic-blob2.svg'
-  import hackerMan from '/mask.webp'
+  import hackerMan from '/2026_KHI_Logo.png'
   import blog from '/blog.png'
   // unplugin-icons imports (compiled to Svelte components by Vite)
   import YoutubeIcon from '~icons/fa-brands/youtube'
