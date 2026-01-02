@@ -90,7 +90,7 @@
 <main class="container mx-auto p-4 relative z-10">
   <div class="glass mx-auto mb-12 p-12 max-w-7xl">
     <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 my-8">
-      <a href="https://flaskvercel-nine.vercel.app/" target="_blank" rel="noreferrer" class="group relative floating">
+      <a href="https://asternberg.xyz/" target="_blank" rel="noreferrer" class="group relative floating">
         <div class="glass-button p-3 transition-all duration-300 hover:scale-110 logo-container">
           <span class="absolute inset-0 bg-gradient-to-br from-orange-400 to-pink-400 opacity-0 group-hover:opacity-30 blur-xl transition-opacity rounded-full"></span>
           <img src={myAvatar} class="logo w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="Flask Vercel Logo" />
