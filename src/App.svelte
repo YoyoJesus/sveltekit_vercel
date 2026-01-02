@@ -2,6 +2,7 @@
   // import custom components
   // import assets (images)
   import myAvatar from '/myAvatar.png'
+  import porfolioLogo from '/portfolio.jpg'
   import kheLogo from '/khe.ico'
   import hacKSULogo from '/hacksu.svg'
   import CombatLogo from '/Combat.png'
@@ -93,7 +94,7 @@
       <a href="https://asternberg.xyz/" target="_blank" rel="noreferrer" class="group relative floating">
         <div class="glass-button p-3 transition-all duration-300 hover:scale-110 logo-container">
           <span class="absolute inset-0 bg-gradient-to-br from-orange-400 to-pink-400 opacity-0 group-hover:opacity-30 blur-xl transition-opacity rounded-full"></span>
-          <img src={myAvatar} class="logo w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="Flask Vercel Logo" />
+          <img src={porfolioLogo} class="logo w-24 h-24 md:w-28 md:h-28 object-contain relative z-10 drop-shadow-lg" alt="Flask Vercel Logo" />
         </div>
       </a>
       
@@ -200,7 +201,9 @@
 
   <div class="glass mx-auto mt-8 p-6 max-w-md text-center">
     <div id="additional_info" class="text-sm md:text-base opacity-90">
-      <span class="font-light">{new Date().getFullYear()} Austin Sternberg</span>
+      <span class="font-light">{new Date().getFullYear()} Austin Sternberg
+        <img src={myAvatar} class="inline-block w-6 h-6 ml-2 rounded-full object-cover align-middle" alt="My Avatar" />
+      </span>
     </div>
   </div>
 
