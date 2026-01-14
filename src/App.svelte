@@ -165,7 +165,7 @@
         <BlueskyIcon class="w-6 h-6 text-white" aria-hidden="true" />
       </a>
 
-      <a href="mailto:austinsternberg45@gmail.com" aria-label="Email" class="glass-button p-3 transition-all duration-300 hover:scale-110">
+      <a href="#" id="open-contact-form" aria-label="Email" class="glass-button p-3 transition-all duration-300 hover:scale-110">
         <EmailIcon class="w-6 h-6 text-white" aria-hidden="true" />
       </a>    </div>
   </div>
@@ -209,3 +209,31 @@
 
 
 </main>
+
+<!-- Contact Modal -->
+<div id="contact-modal" class="modal">
+  <div class="modal-content glass">
+    <button id="close-modal" class="close-btn" aria-label="Close modal">&times;</button>
+    <h2 class="text-2xl font-bold mb-6 text-black">Get in Touch</h2>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name" class="text-black">Name</label>
+        <input type="text" id="name" name="name" required class="form-input" />
+      </div>
+      <div class="form-group">
+        <label for="email" class="text-black">Email</label>
+        <input type="email" id="email" name="email" required class="form-input" />
+      </div>
+      <div class="form-group">
+        <label for="message" class="text-black">Message</label>
+        <textarea id="message" name="message" rows="5" required class="form-input"></textarea>
+      </div>
+      <button type="submit" id="submit-btn" class="submit-btn glass-button">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+  <p id="toast-message"></p>
+</div>
