@@ -515,7 +515,7 @@ button:focus-visible {
   top: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at center, rgba(74, 159, 216, 0.70), rgba(45, 31, 61, 0.70));
+  background: radial-gradient(ellipse at center, rgba(74, 159, 216, 0.80), rgba(45, 31, 61, 0.80));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   opacity: 0;
