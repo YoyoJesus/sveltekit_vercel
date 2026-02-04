@@ -1,5 +1,7 @@
 # Austin Sternberg - Portfolio Site
 
+
+
 ## 🎨 Design
 This site features a beautiful **Frutiger Aero** aesthetic with:
 - Glassmorphism effects with translucent cards and buttons
