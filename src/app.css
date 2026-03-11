@@ -41,6 +41,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
 a {
   font-weight: 500;
   color: var(--accent-light-blue);
