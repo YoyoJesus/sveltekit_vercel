@@ -148,7 +148,7 @@
   <span class="text-black blue-text-glow">View More of My Work on Github</span>
     </a>
 
-    <div class="flex justify-center items-center gap-4 mt-4 mb-4">    <div class="flex justify-center items-center gap-4 mt-4 mb-4">
+    <div class="flex justify-center items-center gap-4 mt-4 mb-4">
       <a href="https://www.youtube.com/@yoyojesus" target="_blank" rel="noreferrer" aria-label="YouTube" class="glass-button p-3 transition-all duration-300 hover:scale-110">
         <YoutubeIcon class="w-6 h-6 text-white" aria-hidden="true" />
       </a>
@@ -159,10 +159,6 @@
 
       <a href="https://www.instagram.com/yoyoje_sus/" target="_blank" rel="noreferrer" aria-label="Instagram" class="glass-button p-3 transition-all duration-300 hover:scale-110">
         <InstagramIcon class="w-6 h-6 text-white" aria-hidden="true" />
-      </a>
-
-      <a href="https://bsky.app/profile/yoyojesus.bsky.social" target="_blank" rel="noreferrer" aria-label="Bluesky" class="glass-button p-3 transition-all duration-300 hover:scale-110">
-        <BlueskyIcon class="w-6 h-6 text-white" aria-hidden="true" />
       </a>
 
       <a href="#" id="open-contact-form" aria-label="Email" class="glass-button p-3 transition-all duration-300 hover:scale-110">
@@ -187,9 +183,12 @@
   {#if showAbout}
     <div class="glass mx-auto mt-8 p-6 max-w-9xl text-left">
       <p class="text-base md:text-lg leading-relaxed">
-        I'm Austin Sternberg, the Events Coordinator at HacKSU. I am a junior at Kent State University pursuing a degree in Computer Science with a minor in Computer Engineering. <br><br>
-        As Events Coordinator, I am responsible for HacKSU's major events, including our annual hackathon, Kent Hack Enough (KHE), and  our new annual CTF competition, Kent Hack IT (KHI) <br><br>
-        I have worked the past few years as a seasonal IT Support Specialist at Riverside Local Schools, where I gained hands-on experience in troubleshooting and repairing various hardware and software issues. As well as maintaining network systems and providing technical support to staff and students. <br><br>
+        I'm Austin Sternberg, a Senior  at Kent State University pursuing a degree in Computer Science with a minor in Computer Engineering. 
+        <br><br>
+        I am currently interning at Awetomaton, a defense contractor in Beavercreek, Ohio, where I work in the IT department, helping to build internal tools improve current processes, and build for scale.
+        <br><br>
+        I am also serving as the President for both HacKSU & Kent State Combat Robotics. Here I lead both organizations in running events, maintaining infrastructure, and building projects in their respective disciplines.
+        <br><br>
         In my free time, I have been developing a handful of python information security tools, which you can find on my GitHub.<br><br><br>
 
         Find more about me on my specific project sites and portfolio links above!
